@@ -3,7 +3,7 @@ export default `
   # Base information about a schools Heismans 
   type Heisman {
     # This is the ID of the team
-    TeamId: Int! #Go jackets
+    TeamId: ID!
     # The name of the university
     School: String!
     # How many Heisman trophies the school has won
