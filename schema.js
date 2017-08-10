@@ -6,9 +6,9 @@ export default `
     TeamId: Int! #Go jackets
     # The name of the university
     School: String!
-    # How many heisman trophies the school has won
+    # How many Heisman trophies the school has won
     Trophies: Int!
-    # Any special comments about the trophies
+    # Any special comments about the trophies(looking at you USC)
     Special: String!
   } 
 
