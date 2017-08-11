@@ -1,7 +1,7 @@
 {
     "development": {
-        "username": "winsipedia",
-        "password": ")MP4Zqg?r>&U?Hc",
+        "username": "root",
+        "password": "Z",
         "database": "winsipedia",
         "host": "127.0.0.1",
         "dialect": "mysql"
