@@ -1,14 +1,22 @@
 export default {
   Query: {
-    getHeisman: (parent, { School }, { db }) => db.Heisman.findOne({
+    school: (parent, args, db) => db.db.Heisman.findOne({
+      attributes: ['TeamId', 'School', 'Trophies', 'Special'],
       where: {
-        School,
+        School: args.School,
       },
     }),
-    // getHeismans: (parent, { Count }, { db }) => db.Heisman.findAll({
-    //   where: {
-    //     Trophies: Count,
-    //   },
-    // }),
+    heismanWinner: (parent, args, db) => db.db.HeismanList.findOne({
+      where: {
+        Year: args.Year,
+      },
+    }),
+  },
+  School: {
+    heismanWinners: (parent, args, db) => db.db.HeismanList.findAll({
+      where: {
+        School: parent.School,
+      },
+    }),
   },
 };

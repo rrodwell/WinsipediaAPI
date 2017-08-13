@@ -1,19 +1,43 @@
 export default `
 
   # Base information about a schools Heismans 
-  type Heisman {
-    # This is the ID of the team
+  type School {
+    # This is the ID of the school
     TeamId: ID!
-    # The name of the university
+    # The name of the school
     School: String!
     # How many Heisman trophies the school has won
     Trophies: Int!
     # Any special comments about the trophies(looking at you USC)
     Special: String!
+    # All of the winners
+    heismanWinners: [HeismanWinner]
   } 
+
+  type HeismanWinner {
+    # The year the Heisman was won
+    Year: Int!
+    # The name of the winner of the Heisman
+    Winner: String!
+    # The name of the school that the winner went to
+    School: String!
+    # The position the winner played on the field
+    Position: String!
+    # The number of points received during the voting
+    Points: Int!
+    # The percent of all points received by the winner during the voting
+    PercentPointsPossible: String!
+  }
+
 
   type Query {
     # Search by school for basic Heisman information
-    getHeisman(School: String!): Heisman
+    school(School: String!): School
+    # Search by school for Heisman winners
+    heismanWinner(Year: Int!): HeismanWinner
   }
+
+
+
+
 `;
