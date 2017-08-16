@@ -1,7 +1,34 @@
 export default `
 
+  type Team {
+    TeamId: Int!
+    School: String!
+    Name: String!
+    Conference: String!
+    Coach: String!
+    Location: String!
+    State: String!
+    Abbreviation: String!
+    Heisman: Heisman!
+    SocialMedia: SocialMedia!
+    Branding: Branding!
+  }
+
+  type SocialMedia {
+    ADTwitter: String!
+    FBTwitter: String!
+    SBNTwitter: String!
+    URL: String!
+  }
+
+  type Branding {
+    Color: String!
+    SecondaryColor: String!
+    LikeColor: String!
+  }
+
   # Base information about a schools Heismans 
-  type School {
+  type Heisman {
     # This is the ID of the school
     TeamId: ID!
     # The name of the school
@@ -11,7 +38,7 @@ export default `
     # Any special comments about the trophies(looking at you USC)
     Special: String!
     # All of the winners
-    heismanWinners: [HeismanWinner]
+    HeismanWinners: [HeismanWinner]
   } 
 
   type HeismanWinner {
@@ -30,14 +57,11 @@ export default `
   }
 
 
+
   type Query {
-    # Search by school for basic Heisman information
-    school(School: String!): School
-    # Search by school for Heisman winners
-    heismanWinner(Year: Int!): HeismanWinner
+    # Search by team for basic school information
+    team(School: String!): Team
   }
-
-
 
 
 `;

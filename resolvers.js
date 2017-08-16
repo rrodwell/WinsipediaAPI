@@ -1,19 +1,33 @@
 export default {
   Query: {
-    school: (parent, args, db) => db.db.Heisman.findOne({
-      attributes: ['TeamId', 'School', 'Trophies', 'Special'],
-      where: {
-        School: args.School,
-      },
-    }),
-    heismanWinner: (parent, args, db) => db.db.HeismanList.findOne({
-      where: {
-        Year: args.Year,
-      },
+    team: (parent, args, source) => source.db.Team.findOne({
+        attributes: ['TeamId', 'School', 'Name', 'Conference', 'Coach', 'Location', 'State', 'Abbreviation'],
+        where: {
+          School: args.School,
+        },
     }),
   },
-  School: {
-    heismanWinners: (parent, args, db) => db.db.HeismanList.findAll({
+  Team: {
+      Heisman: (parent, args, source) => source.db.Heisman.findOne({
+          where: {
+              School: parent.School,
+          },
+      }),
+      SocialMedia: (parent, args, source) => source.db.Team.findOne({
+          attributes: ['ADTwitter', 'FBTwitter', 'SBNTwitter', 'URL'],
+          where: {
+              School: parent.School,
+          },
+      }),
+      Branding: (parent, args, source) => source.db.Team.findOne({
+          attributes: ['Color', 'SecondaryColor', 'LikeColor'],
+          where: {
+              School: parent.School,
+          },
+      }),
+  },
+  Heisman: {
+    HeismanWinners: (parent, args, source) => source.db.HeismanList.findAll({
       where: {
         School: parent.School,
       },
