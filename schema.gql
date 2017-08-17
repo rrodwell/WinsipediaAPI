@@ -1,30 +1,60 @@
 export default `
-
+  #Entry point in all team data
   type Team {
+    #The ID of the team
     TeamId: Int!
+    #The name of the school
     School: String!
+    #The nickname of the team
     Name: String!
+    #The conference the team currently plays in
     Conference: String!
+    #The current coach of the team
     Coach: String!
+    #The city the team is located in
     Location: String!
+    #The state the team is located in
     State: String!
+    #The abbreviation for the team.
     Abbreviation: String!
+    #Heisman related information about the team
     Heisman: Heisman!
+    #Social media information about the team
     SocialMedia: SocialMedia!
+    #Branding information about the team
     Branding: Branding!
+    #All American information about the team
+    AllAmerican: AllAmerican!
   }
 
-  type SocialMedia {
-    ADTwitter: String!
-    FBTwitter: String!
-    SBNTwitter: String!
-    URL: String!
+  #All American information about the team
+  type AllAmerican {
+    #The number of times the team has had someone as an All American
+    Number: Int!
+    #The number of players that have been voted as All Americans
+    Players: Int!
   }
-
+  
+  #Branding information about the team
   type Branding {
+    #The primary color for the team
     Color: String!
+    #The seconday color for the team
     SecondaryColor: String!
+    #The common color name for the team
     LikeColor: String!
+  }
+
+  #Social media information about the team
+  type SocialMedia {
+    #The Athletic Directors twitter account
+    ADTwitter: String!
+    #The football teams twitter account
+    FBTwitter: String!
+    #The Sports Blog Nation team twitter account
+    SBNTwitter: String!
+    #The URL of the team home page
+    URL: String!
   }
 
   # Base information about a schools Heismans 
