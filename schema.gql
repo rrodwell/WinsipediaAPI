@@ -25,6 +25,24 @@ export default `
     Branding: Branding!
   }
 
+  #All American information about the team
+  type AllAmerican {
+    #The number of times the team has had someone as an All American
+    Number: Int!
+    #The number of players that have been voted as All Americans
+    Players: Int!
+  }
+  
+  #Branding information about the team
+  type Branding {
+    #The primary color for the team
+    Color: String!
+    #The seconday color for the team
+    SecondaryColor: String!
+    #The common color name for the team
+    LikeColor: String!
+  }
+
   #Social media information about the team
   type SocialMedia {
     #The Athletic Directors twitter account
@@ -35,16 +53,6 @@ export default `
     SBNTwitter: String!
     #The URL of the team home page
     URL: String!
-  }
-
-  #Branding information about the team
-  type Branding {
-    #The primary color for the team
-    Color: String!
-    #The seconday color for the team
-    SecondaryColor: String!
-    #The common color name for the team
-    LikeColor: String!
   }
 
   # Base information about a schools Heismans 
