@@ -23,6 +23,8 @@ export default `
     SocialMedia: SocialMedia!
     #Branding information about the team
     Branding: Branding!
+    #All American information about the team
+    AllAmerican: AllAmerican!
   }
 
   #All American information about the team
