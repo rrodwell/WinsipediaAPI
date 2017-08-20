@@ -23,8 +23,8 @@ app.use('/graphiql', graphiqlExpress({
 
 
 db.sequelize.sync({})
-  .then(function() {
-    app.listen(3000, function() {
+  .then(() => {
+    app.listen(3000, () => {
       console.log('listening on 3000');
     });
   });
