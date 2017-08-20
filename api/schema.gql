@@ -87,10 +87,14 @@ export default `
   }
 
 
-
+#Queries on College Football
   type Query {
     # Search by team for basic school information
     team(School: String!): Team
+  }
+
+  type Schema {
+    collegeFootball: Query
   }
 
 
