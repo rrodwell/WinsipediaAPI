@@ -5,8 +5,8 @@ import { makeExecutableSchema } from 'graphql-tools';
 import db from './models';
 
 
-import typeDefs from './schema';
-import resolvers from './resolvers';
+import typeDefs from './api/schema.gql';
+import resolvers from './api/resolvers';
 
 const schema = makeExecutableSchema({
   typeDefs,
@@ -23,8 +23,8 @@ app.use('/graphiql', graphiqlExpress({
 
 
 db.sequelize.sync({})
-  .then(function() {
-    app.listen(3000, function() {
+  .then(() => {
+    app.listen(3000, () => {
       console.log('listening on 3000');
     });
   });
