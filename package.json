@@ -26,7 +26,8 @@
     "graphql-tools": "^1.1.0",
     "mysql": "^2.14.1",
     "mysql2": "^1.4.0",
-    "sequelize": "^4.4.2"
+    "sequelize": "^4.4.2",
+    "webshot": "^0.18.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
