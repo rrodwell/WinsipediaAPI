@@ -17,11 +17,11 @@ var options = {
     },
     userAgent: 'Mozilla/5.0 (iPhone; U; CPU iPhone OS 3_2 like Mac OS X; en-us)'
     + ' AppleWebKit/531.21.20 (KHTML, like Gecko) Mobile/7B298g',
-    quality: 100,
+    quality: 1,
     defaultWhiteBackground: true
 };
 
-webshot("http://www.winsipedia.com/georgia-tech/vs/tennessee", "GTvsTN-mobile.png", options, (err) => {
+webshot("http://www.winsipedia.com/georgia-tech/vs/tennessee", "GTvsTN-mobile2.png", options, (err) => {
     if (err) {
         return console.log(err);
     }
