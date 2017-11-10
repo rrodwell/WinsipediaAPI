@@ -86,16 +86,29 @@ export default `
     PercentPointsPossible: String!
   }
 
+  type Matchup {
+    #The ID of the team
+    TeamId: Int!
+    #The name of the school
+    School: String!
+  }
+
 
 #Queries on College Football
   type Query {
     # Search by team for basic school information
-    team(School: String!): Team
+    team(School: String!): Team,
+    matchup(School1: String!, School2: String!): Matchup
   }
 
-  type Schema {
-    collegeFootball: Query
-  }
+  # type Query {
+  #   # Search for team matchups
+  #   matchup(School: String!, School: String!): Matchup
+  # }
+
+  # type Schema {
+  #   collegeFootball: Query
+  # }
 
 
 `;
