@@ -6,8 +6,8 @@ export default {
         School: args.School,
       },
     }),
-    matchup: (parents, args, source) => source.db.Record18.findOne({
-        attributes: ['TeamId', 'School'],
+    matchup: (parents, args, source) => source.db[args.School1].findOne({
+        attributes: ['TeamId', 'School', 'Wins', 'Losses', 'Ties'],
         where: {
           TeamID: args.School2,
         },
