@@ -6,12 +6,26 @@ export default {
         School: args.School,
       },
     }),
-    matchup: (parents, args, source) => source.db[args.School1].findOne({
-        attributes: ['TeamId', 'School', 'Wins', 'Losses', 'Ties'],
+    matchup: async (parents, args, source) => {
+      let School1ID = await source.db.Team.findOne({
+        attributes: ['TeamId'],
         where: {
-          TeamID: args.School2,
+          Slug: args.School1,
         },
       })
+      let School2ID = await source.db.Team.findOne({
+        attributes: ['TeamId'],
+        where: {
+          Slug: args.School2,
+        },
+      })  
+      return source.db["Record".concat(School1ID.dataValues.TeamId)].findOne({
+        attributes: ['TeamId', 'School', 'Wins', 'Losses', 'Ties'],
+        where: {
+          TeamID: School2ID.dataValues.TeamId,
+        },
+      })
+    }
   },
   Team: {
     Heisman: (parent, args, source) => source.db.Heisman.findOne({

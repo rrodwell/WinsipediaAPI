@@ -91,11 +91,11 @@ export default `
     TeamId: Int!
     #The name of the school
     School: String!
-    #Total Wins by First School
+    #Total Wins in Matchup by First School
     Wins: Int!
-    #Total Losses by First School
+    #Total Losses in Matchup by First School
     Losses: Int!
-    #Total Ties by First School
+    #Total Ties in Matchup by First School
     Ties: Int!
   }
 
