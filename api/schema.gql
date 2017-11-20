@@ -87,10 +87,10 @@ export default `
   }
 
   type Matchup {
-    #The ID of the team
-    TeamId: Int!
-    #The name of the school
-    School: String!
+    #The name of the primary schhol
+    School1: String!
+    #The name of the comparison school
+    School2: String!
     #Total Wins in Matchup by First School
     Wins: Int!
     #Total Losses in Matchup by First School
@@ -106,15 +106,6 @@ export default `
     team(School: String!): Team,
     matchup(School1: String!, School2: String!): Matchup
   }
-
-  # type Query {
-  #   # Search for team matchups
-  #   matchup(School: String!, School: String!): Matchup
-  # }
-
-  # type Schema {
-  #   collegeFootball: Query
-  # }
 
 
 `;
