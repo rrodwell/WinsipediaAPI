@@ -8,6 +8,14 @@ var env       = process.env.NODE_ENV || 'development';
 var config    = require('./config.json')[env];
 var db        = {};
 
+//import in models
+// import allamerican from './allamerican';
+// import heisman from './heisman';
+// import heismanlist from './heismanlist'
+// import record from './record';
+// import team from './team';
+
+
 config.define = {
   freezeTableName: true,
 }
@@ -18,15 +26,22 @@ if (config.use_env_variable) {
   var sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
 
-fs
-  .readdirSync(__dirname)
-  .filter(function(file) {
-    return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
-  })
-  .forEach(function(file) {
-    var model = sequelize['import'](path.join(__dirname, file));
-    db[model.name] = model;
-  });
+//sequalize the models
+var allamericanModel = sequelize.import('./allamerican')
+db[allamericanModel.name] = allamericanModel;
+
+var heisman = sequelize.import('./heisman')
+db[heisman.name] = heisman;
+
+var heismanlist = sequelize.import('./heismanlist')
+db[heismanlist.name] = heismanlist;
+
+var team = sequelize.import('./team')
+db[team.name] = team;
+
+sequelize.import('./record').forEach(element => {
+  db[element.name] = element;
+});
 
 Object.keys(db).forEach(function(modelName) {
   if (db[modelName].associate) {
