@@ -8,14 +8,6 @@ var env       = process.env.NODE_ENV || 'development';
 var config    = require('./config.json')[env];
 var db        = {};
 
-//import in models
-// import allamerican from './allamerican';
-// import heisman from './heisman';
-// import heismanlist from './heismanlist'
-// import record from './record';
-// import team from './team';
-
-
 config.define = {
   freezeTableName: true,
 }
