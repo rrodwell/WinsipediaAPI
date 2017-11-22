@@ -25,6 +25,8 @@ export default `
     Branding: Branding!
     #All American information about the team
     AllAmerican: AllAmerican!
+    #Choose the schools matchups for comparison
+    Matchups: [Matchup]!
   }
 
   #All American information about the team
@@ -59,10 +61,6 @@ export default `
 
   # Base information about a schools Heismans 
   type Heisman {
-    # This is the ID of the school
-    TeamId: ID!
-    # The name of the school
-    School: String!
     # How many Heisman trophies the school has won
     Trophies: Int!
     # Any special comments about the trophies(looking at you USC)
@@ -76,8 +74,6 @@ export default `
     Year: Int!
     # The name of the winner of the Heisman
     Winner: String!
-    # The name of the school that the winner went to
-    School: String!
     # The position the winner played on the field
     Position: String!
     # The number of points received during the voting
@@ -87,7 +83,7 @@ export default `
   }
 
   type Matchup {
-    #The name of the primary schhol
+    #The name of the primary school
     School1: String!
     #The name of the comparison school
     School2: String!
