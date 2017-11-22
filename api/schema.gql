@@ -26,7 +26,7 @@ export default `
     #All American information about the team
     AllAmerican: AllAmerican!
     #Choose the schools matchups for comparison
-    Matchups: [Matchup]!
+    Matchup: Matchup!
   }
 
   #All American information about the team
@@ -83,10 +83,8 @@ export default `
   }
 
   type Matchup {
-    #The name of the primary school
-    School1: String!
-    #The name of the comparison school
-    School2: String!
+    #The name of the competing school
+    MatchupSchool: String!
     #Total Wins in Matchup by First School
     Wins: Int!
     #Total Losses in Matchup by First School
@@ -99,8 +97,7 @@ export default `
 #Queries on College Football
   type Query {
     # Search by team for basic school information
-    team(School: String!): Team,
-    matchup(School1: String!, School2: String!): Matchup
+    team(School: String!, Matchup: String): Team,
   }
 
 

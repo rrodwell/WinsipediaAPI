@@ -23,6 +23,7 @@ export default {
           Location: teamInfo.dataValues.Location,
           State: teamInfo.dataValues.State,
           Abbreviation: teamInfo.dataValues.Abbreviation,
+          Matchup: args.Matchup
         }
       }
       catch (e) {
@@ -39,29 +40,26 @@ export default {
       }
     },
 
-    matchup: async (parents, args, source) => {
+    
+  },
+
+  Team: {
+    Matchup: async (parent, args, source) => {
       try {
-        let school1ID = await source.db.Team.findOne({
+        let matchupTeam = await source.db.Team.findOne({
           attributes: ['TeamId', 'School'],
           where: {
-            Slug: args.School1,
-          },
-        })
-        let school2ID = await source.db.Team.findOne({
-          attributes: ['TeamId', 'School'],
-          where: {
-            Slug: args.School2,
+            Slug: parent.Matchup,
           },
         })  
-        let dbInfo =  await source.db["Record".concat(school1ID.dataValues.TeamId)].findOne({
+        let dbInfo =  await source.db["Record".concat(parent.TeamId)].findOne({
           attributes: ['Wins', 'Losses', 'Ties'],
           where: {
-            TeamID: school2ID.dataValues.TeamId,
+            TeamID: matchupTeam.dataValues.TeamId,
           },
         })
         return  {
-          School1: school1ID.dataValues.School,
-          School2: school2ID.dataValues.School,
+          MatchupSchool: matchupTeam.dataValues.School,
           Wins: dbInfo.Wins,
           Losses: dbInfo.Losses,
           Ties: dbInfo.Ties,
@@ -69,17 +67,13 @@ export default {
       }
       catch (e) {
         return {
-          School1: args.School1,
-          School2: args.School2,
+          MatchupSchool: "",
           Wins: 0,
           Losses: 0,
           Ties: 0,
         }
       }
-    }
-  },
-
-  Team: {
+    },
     Heisman: async (parent, args, source) => {
       try {
         let heismanInfo = await source.db.Heisman.findOne({
