@@ -27,6 +27,8 @@ export default `
     AllAmerican: AllAmerican!
     #Choose the schools matchups for comparison
     Matchup: Matchup!
+    #See how a team fares for all time rankings
+    AllTimeRankings: AllTimeRankings!
   }
 
   #All American information about the team
@@ -93,6 +95,41 @@ export default `
     Ties: Int!
   }
 
+  type AllTimeRankings {
+    AllTimeRecordRank: Int!
+    AllTimeRecordPercent: Float!
+    AllTimeRecordWins: Int!
+    AllTimeRecordLosses: Int!
+    AllTimeRecordTies: Int!
+    NationalChampRank: Int!
+    NationalChampData: Int!
+    ConferenceChampRank: Int!
+    ConferenceChampData: Int!
+    BowlGameRank: Int!
+    WinRank: Int!
+    WinData: Int!
+    BowlRecordRank: Int!
+    BowlRecordPercent: Float!
+    BowlRecordWins: Int!
+    BowlRecordLosses: Int!
+    BowlRecordTies: Int!
+    AllAmericanRank: Int!
+    AllAmericanData: Int!
+    HeismanRank: Int!
+    HeismanData: Int!
+    NFLDraftRank: Int!
+    NFLDraftData: Int!
+    NFLFirstRoundRank: Int!
+    NFLFirstRound: Int!
+    APOneRank: Int!
+    APOne: Int!
+    WeeksInPollRank: Int!
+    WeeksInPollData: Int!
+    Overall: Float!
+    OverallRank: Int!
+    BowlStreakRank: Int!
+    BowlStreakData: Int!
+  }
 
 #Queries on College Football
   type Query {

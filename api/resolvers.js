@@ -72,6 +72,54 @@ export default {
         }
       }
     },
+    AllTimeRankings: async (parent, args, source) => {
+      try {
+        let allTimeRankingsInfo = await source.db.Rank.findOne({
+          attributes: ['AllTimeRecordRank', 'AllTimeRecordPercent', 'AllTimeRecordWins', 'AllTimeRecordLosses', 'AllTimeRecordTies', 'NationalChampRank', 'NationalChampData', 'ConferenceChampRank', 'ConferenceChampData', 'BowlGameRank', 'WinRank', 'WinData', 'BowlRecordRank', 'BowlRecordPercent', 'BowlRecordWins', 'BowlRecordLosses', 'BowlRecordTies', 'AllAmericanRank', 'AllAmericanData', 'HeismanRank', 'HeismanData', 'NFLDraftRank', 'NFLDraftData', 'NFLFirstRoundRank', 'NFLFirstRound', 'APOneRank', 'APOne', 'WeeksInPollRank', 'WeeksInPollData', 'Overall', 'OverallRank', 'BowlStreakRank', 'BowlStreakData'],          
+          where: {
+            teamId: parent.TeamId
+          }
+        })
+        return allTimeRankingsInfo
+      }
+      catch (e) {
+        return {
+          AllTimeRecordRank: 0,
+          AllTimeRecordPercent: 0,
+          AllTimeRecordWins: 0,
+          AllTimeRecordLosses: 0,
+          AllTimeRecordTies: 0,
+          NationalChampRank: 0,
+          NationalChampData: 0,
+          ConferenceChampRank: 0,
+          ConferenceChampData: 0,
+          BowlGameRank: 0,
+          WinRank: 0,
+          WinData: 0,
+          BowlRecordRank: 0,
+          BowlRecordPercent: 0,
+          BowlRecordWins: 0,
+          BowlRecordLosses: 0,
+          BowlRecordTies: 0,
+          AllAmericanRank: 0,
+          AllAmericanData: 0,
+          HeismanRank: 0,
+          HeismanData: 0,
+          NFLDraftRank: 0,
+          NFLDraftData: 0,
+          NFLFirstRoundRank: 0,
+          NFLFirstRound: 0,
+          APOneRank: 0,
+          APOne: 0,
+          WeeksInPollRank: 0,
+          WeeksInPollData: 0,
+          Overall: 0,
+          OverallRank: 0,
+          BowlStreakRank: 0,
+          BowlStreakData: 0,
+        }
+      }
+    },
     Heisman: async (parent, args, source) => {
       try {
         let heismanInfo = await source.db.Heisman.findOne({

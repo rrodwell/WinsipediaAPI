@@ -28,6 +28,9 @@ db[heisman.name] = heisman;
 var heismanlist = sequelize.import('./heismanlist')
 db[heismanlist.name] = heismanlist;
 
+var rank = sequelize.import('./rank')
+db[rank.name] = rank;
+
 var team = sequelize.import('./team')
 db[team.name] = team;
 
