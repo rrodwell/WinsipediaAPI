@@ -136,6 +136,4 @@ export default `
     # Search by team for basic school information
     team(School: String!, Matchup: String): Team,
   }
-
-
 `;
