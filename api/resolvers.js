@@ -2,16 +2,19 @@ export default {
   Query: {
     team: async (parent, args, source) => {
       try {
-        let schoolID = await source.db.Team.findOne({
-          attributes: ['TeamId', 'School'],
-          where: {
-            Slug: args.School,
-          },
-        })
         let teamInfo = await source.db.Team.findOne({
-          attributes: ['TeamId', 'School', 'Name', 'Conference', 'Coach', 'Location', 'State', 'Abbreviation'],
-          where: {
-            TeamID: schoolID.dataValues.TeamId,
+          attributes: [
+            'TeamId', 
+            'School', 
+            'Name', 
+            'Conference', 
+            'Coach', 
+            'Location', 
+            'State', 
+            'Abbreviation'
+          ],
+            where: {
+              Slug: args.School,
             },
           }) 
         return {
@@ -45,13 +48,20 @@ export default {
     Matchup: async (parent, args, source) => {
       try {
         let matchupTeam = await source.db.Team.findOne({
-          attributes: ['TeamId', 'School'],
+          attributes: [
+            'TeamId', 
+            'School'
+          ],
           where: {
             Slug: parent.Matchup,
           },
         })  
         let dbInfo =  await source.db["Record".concat(parent.TeamId)].findOne({
-          attributes: ['Wins', 'Losses', 'Ties'],
+          attributes: [
+            'Wins', 
+            'Losses', 
+            'Ties'
+          ],
           where: {
             TeamID: matchupTeam.dataValues.TeamId,
           },
@@ -75,7 +85,41 @@ export default {
     AllTimeRankings: async (parent, args, source) => {
       try {
         let allTimeRankingsInfo = await source.db.Rank.findOne({
-          attributes: ['AllTimeRecordRank', 'AllTimeRecordPercent', 'AllTimeRecordWins', 'AllTimeRecordLosses', 'AllTimeRecordTies', 'NationalChampRank', 'NationalChampData', 'ConferenceChampRank', 'ConferenceChampData', 'BowlGameRank', 'WinRank', 'WinData', 'BowlRecordRank', 'BowlRecordPercent', 'BowlRecordWins', 'BowlRecordLosses', 'BowlRecordTies', 'AllAmericanRank', 'AllAmericanData', 'HeismanRank', 'HeismanData', 'NFLDraftRank', 'NFLDraftData', 'NFLFirstRoundRank', 'NFLFirstRound', 'APOneRank', 'APOne', 'WeeksInPollRank', 'WeeksInPollData', 'Overall', 'OverallRank', 'BowlStreakRank', 'BowlStreakData'],          
+          attributes: [
+            'AllTimeRecordRank', 
+            'AllTimeRecordPercent', 
+            'AllTimeRecordWins', 
+            'AllTimeRecordLosses', 
+            'AllTimeRecordTies', 
+            'NationalChampRank', 
+            'NationalChampData', 
+            'ConferenceChampRank', 
+            'ConferenceChampData', 
+            'BowlGameRank', 
+            'WinRank', 
+            'WinData', 
+            'BowlRecordRank', 
+            'BowlRecordPercent', 
+            'BowlRecordWins', 
+            'BowlRecordLosses', 
+            'BowlRecordTies', 
+            'AllAmericanRank', 
+            'AllAmericanData', 
+            'HeismanRank', 
+            'HeismanData', 
+            'NFLDraftRank', 
+            'NFLDraftData', 
+            'NFLFirstRoundRank', 
+            'NFLFirstRound', 
+            'APOneRank', 
+            'APOne', 
+            'WeeksInPollRank', 
+            'WeeksInPollData', 
+            'Overall', 
+            'OverallRank', 
+            'BowlStreakRank', 
+            'BowlStreakData'
+          ],          
           where: {
             teamId: parent.TeamId
           }
@@ -167,7 +211,11 @@ export default {
     Branding: async (parent, args, source) => {
       try {
         let brandingInfo = await source.db.Team.findOne({
-          attributes: ['Color', 'SecondaryColor', 'LikeColor'],
+          attributes: [
+            'Color', 
+            'SecondaryColor', 
+            'LikeColor'
+          ],
           where: {
             TeamId: parent.TeamId,
           },
@@ -189,7 +237,10 @@ export default {
     AllAmerican: async (parent, args, source) => {
       try {
         let allAmericanInfo = await source.db.AllAmerican.findOne({
-          attributes: ['Number', 'Players'],
+          attributes: [
+            'Number', 
+            'Players'
+          ],
           where: {
             TeamId: parent.TeamId,
           },
@@ -214,7 +265,13 @@ export default {
       console.log ("GOODBYEWORLD")
       try {
         let heismanWinnersInfo = await source.db.HeismanList.findAll({
-          attributes: ['Year', 'Winner', 'Position', 'Points', 'PercentPointsPossible'],          
+          attributes: [
+            'Year', 
+            'Winner', 
+            'Position', 
+            'Points', 
+            'PercentPointsPossible'
+          ],          
           where: {
             School: parent.School,
           },
