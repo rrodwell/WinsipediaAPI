@@ -1,8 +1,6 @@
 export default `
   #Entry point in all team data
   type Team {
-    #The ID of the team
-    TeamId: Int!
     #The name of the school
     School: String!
     #The nickname of the team
