@@ -4,7 +4,7 @@ export default `
     #The name of the school
     SchoolName: String!
     #The nickname of the team
-    Name: String!
+    TeamName: String!
     #The conference the team currently plays in
     Conference: String!
     #The current coach of the team

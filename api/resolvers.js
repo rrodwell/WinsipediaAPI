@@ -20,7 +20,7 @@ export default {
         return {
           TeamId: teamInfo.dataValues.TeamId,
           SchoolName: teamInfo.dataValues.School,
-          Name: teamInfo.dataValues.Name,
+          TeamName: teamInfo.dataValues.Name,
           Conference: teamInfo.dataValues.Conference,
           Coach: teamInfo.dataValues.Coach,
           Location: teamInfo.dataValues.Location,
@@ -34,7 +34,7 @@ export default {
         return {
           TeamId: "",
           School: "",
-          Name: "",
+          TeamName: "",
           Conference: "",
           Coach: "",
           Location: "",
@@ -309,7 +309,7 @@ export default {
         return {
           TeamId: teamInfo.dataValues.TeamId,
           SchoolName: teamInfo.dataValues.School,
-          Name: teamInfo.dataValues.Name,
+          TeamName: teamInfo.dataValues.Name,
           Conference: teamInfo.dataValues.Conference,
           Coach: teamInfo.dataValues.Coach,
           Location: teamInfo.dataValues.Location,
@@ -323,7 +323,7 @@ export default {
         return {
           TeamId: "",
           SchoolName: "",
-          Name: "",
+          TeamName: "",
           Conference: "",
           Coach: "",
           Location: "",
