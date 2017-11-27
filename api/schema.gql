@@ -2,7 +2,7 @@ export default `
   #Entry point in all team data
   type Team {
     #The name of the school
-    School: String!
+    SchoolName: String!
     #The nickname of the team
     Name: String!
     #The conference the team currently plays in

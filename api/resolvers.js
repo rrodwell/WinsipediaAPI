@@ -19,7 +19,7 @@ export default {
           }) 
         return {
           TeamId: teamInfo.dataValues.TeamId,
-          School: teamInfo.dataValues.School,
+          SchoolName: teamInfo.dataValues.School,
           Name: teamInfo.dataValues.Name,
           Conference: teamInfo.dataValues.Conference,
           Coach: teamInfo.dataValues.Coach,
@@ -308,7 +308,7 @@ export default {
           }) 
         return {
           TeamId: teamInfo.dataValues.TeamId,
-          School: teamInfo.dataValues.School,
+          SchoolName: teamInfo.dataValues.School,
           Name: teamInfo.dataValues.Name,
           Conference: teamInfo.dataValues.Conference,
           Coach: teamInfo.dataValues.Coach,
@@ -322,7 +322,7 @@ export default {
       catch (e) {
         return {
           TeamId: "",
-          School: "",
+          SchoolName: "",
           Name: "",
           Conference: "",
           Coach: "",
