@@ -64,7 +64,7 @@ export default `
     # How many Heisman trophies the school has won
     Trophies: Int!
     # Any special comments about the trophies(looking at you USC)
-    Special: String!
+    Notes: String!
     # All of the winners
     HeismanWinners: [HeismanWinner]
   } 

@@ -181,14 +181,14 @@ export default {
         })
         return {
           Trophies: heismanInfo.dataValues.Trophies,
-          Special: heismanInfo.dataValues.Special,
+          Notes: heismanInfo.dataValues.Special,
           School: heismanInfo.dataValues.School
         }
       }
       catch (e) {
         return {
           Trophies: 0,
-          Special: "",
+          Notes: "",
         }    
       }
     },
