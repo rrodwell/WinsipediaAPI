@@ -26,7 +26,8 @@ export default {
           Location: teamInfo.dataValues.Location,
           State: teamInfo.dataValues.State,
           Abbreviation: teamInfo.dataValues.Abbreviation,
-          Matchup: args.Matchup
+          MatchupSlug: args.Matchup,
+          SchoolSlug: args.School,
         }
       }
       catch (e) {
@@ -46,6 +47,9 @@ export default {
 
   Team: {
     Matchup: async (parent, args, source) => {
+      console.log('-------------------------')
+      console.log(parent)
+      console.log('-------------------------')      
       try {
         let matchupTeam = await source.db.Team.findOne({
           attributes: [
@@ -53,7 +57,7 @@ export default {
             'School'
           ],
           where: {
-            Slug: parent.Matchup,
+            Slug: parent.MatchupSlug,
           },
         })  
         let dbInfo =  await source.db["Record".concat(parent.TeamId)].findOne({
@@ -71,6 +75,9 @@ export default {
           Wins: dbInfo.Wins,
           Losses: dbInfo.Losses,
           Ties: dbInfo.Ties,
+          MatchupTeamID: matchupTeam.dataValues.TeamId,
+          MatchupSlug: parent.MatchupSlug,
+          SchoolSlug: parent.SchoolSlug
         }
       }
       catch (e) {
@@ -260,9 +267,6 @@ export default {
   },
   Heisman: {
     HeismanWinners: async (parent, args, source) => {
-      console.log ("HELLOWORLD")
-      console.log(parent)
-      console.log ("GOODBYEWORLD")
       try {
         let heismanWinnersInfo = await source.db.HeismanList.findAll({
           attributes: [
@@ -280,6 +284,52 @@ export default {
       }
       catch (e) {
         return []
+      }
+    },
+  },
+
+  Matchup: {
+    MatchupTeam: async (parent, args, source) => {
+      try {
+        let teamInfo = await source.db.Team.findOne({
+          attributes: [
+            'TeamId', 
+            'School', 
+            'Name', 
+            'Conference', 
+            'Coach', 
+            'Location', 
+            'State', 
+            'Abbreviation'
+          ],
+            where: {
+              TeamID: parent.MatchupTeamID,
+            },
+          }) 
+        return {
+          TeamId: teamInfo.dataValues.TeamId,
+          School: teamInfo.dataValues.School,
+          Name: teamInfo.dataValues.Name,
+          Conference: teamInfo.dataValues.Conference,
+          Coach: teamInfo.dataValues.Coach,
+          Location: teamInfo.dataValues.Location,
+          State: teamInfo.dataValues.State,
+          Abbreviation: teamInfo.dataValues.Abbreviation,
+          SchoolSlug: parent.MatchupSlug,
+          MatchupSlug: parent.SchoolSlug,
+        }
+      }
+      catch (e) {
+        return {
+          TeamId: "",
+          School: "",
+          Name: "",
+          Conference: "",
+          Coach: "",
+          Location: "",
+          State: "",
+          Abbreviation: "",
+        }
       }
     },
   },
