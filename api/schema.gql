@@ -10,7 +10,7 @@ export default `
     #The current coach of the team
     Coach: String!
     #The city the team is located in
-    Location: String!
+    City: String!
     #The state the team is located in
     State: String!
     #The abbreviation for the team.
