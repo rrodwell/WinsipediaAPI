@@ -87,24 +87,36 @@ export default `
   type Matchup {
     #The name of the competing school
     MatchupSchool: String!
-    #Total Wins in Matchup by First School
+    #Total Wins in Matchup by Team
     Wins: Int!
-    #Total Losses in Matchup by First School
+    #Total Losses in Matchup by Team
     Losses: Int!
-    #Total Ties in Matchup by First School
+    #Total Ties in Matchup by Team
     Ties: Int!
+    #Team data for matchup team
+    MatchupTeam: Team!
   }
 
   type AllTimeRankings {
+    #Teams all time record rank compared to other teams
     AllTimeRecordRank: Int!
+    #Teams all time record winning percent
     AllTimeRecordPercent: Float!
+    #Teams all time record number of wins
     AllTimeRecordWins: Int!
+    #Teams all time record number of losses
     AllTimeRecordLosses: Int!
+    #Teams all time record number of ties
     AllTimeRecordTies: Int!
+    #Teams number of national championships rank compared to other teams
     NationalChampRank: Int!
+    #Teams number of national championships
     NationalChampData: Int!
+    #Teams number of conference championships rank compared to other teams
     ConferenceChampRank: Int!
+    #Teams number of conference championships
     ConferenceChampData: Int!
+    #Teams all time bowl record rank compared to other teams
     BowlGameRank: Int!
     WinRank: Int!
     WinData: Int!
