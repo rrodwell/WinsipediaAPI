@@ -50,13 +50,13 @@ export default `
   #Social media information about the team
   type SocialMedia {
     #The Athletic Directors twitter account
-    ADTwitter: String!
+    AthelticDepartmentTwitter: String
     #The football teams twitter account
-    FBTwitter: String!
+    FootballTwitter: String
     #The Sports Blog Nation team twitter account
-    SBNTwitter: String!
+    SBNTwitter: String
     #The URL of the team home page
-    URL: String!
+    HomePageURL: String
   }
 
   # Base information about a schools Heismans 

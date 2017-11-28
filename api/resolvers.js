@@ -201,17 +201,18 @@ export default {
           }
         })
         return {
-          ADTwitter: socialMediaInfo.dataValues.ADTwitter,
-          FBTwitter: socialMediaInfo.dataValues.FBTwitter,
+          AtheleticDepartmentTwitter: socialMediaInfo.dataValues.ADTwitter,
+          FootballTwitter: socialMediaInfo.dataValues.FBTwitter,
           SBNTwitter: socialMediaInfo.dataValues.SBNTwitter,
-          URL: socialMediaInfo.dataValues.URL,
+          HomePageURL: socialMediaInfo.dataValues.URL,
         }
       }
       catch (e) {
         return {
-          ADTwitter: "",
-          FBTwitter: "",
-          URL: "",
+          AtheleticDepartmentTwitter: "",
+          FootballTwitter: "",
+          SBNTwitter: "",
+          HomePageURL: "",
         }
       }
     },
