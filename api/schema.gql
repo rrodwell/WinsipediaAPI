@@ -39,10 +39,10 @@ export default `
   
   #Branding information about the team
   type Branding {
-    #The primary color for the team
-    Color: String!
-    #The seconday color for the team
-    SecondaryColor: String!
+    #The primary color for the team in hex
+    HexColor: String!
+    #The seconday color for the team in hex
+    HexSecondaryColor: String!
     #The common color name for the team
     LikeColor: String!
   }

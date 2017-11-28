@@ -228,15 +228,15 @@ export default {
           },
         })
         return {
-          Color: brandingInfo.dataValues.Color,
-          SecondaryColor: brandingInfo.dataValues.SecondaryColor,
+          HexColor: brandingInfo.dataValues.Color,
+          HexSecondaryColor: brandingInfo.dataValues.SecondaryColor,
           LikeColor: brandingInfo.dataValues.LikeColor,
         }
       }
       catch (e) {
         return {
-          Color: "",
-          SecondaryColor: "",
+          HexColor: "",
+          HexSecondaryColor: "",
           LikeColor: "",
         }
       }
