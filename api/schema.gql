@@ -11,6 +11,10 @@ export default `
     Coach: String!
     #The city the team is located in
     City: String!
+    #The slug for the team
+    SchoolSlug: String!
+    #The slug for the matchup team
+    MatchupSlug: String
     #The state the team is located in
     State: String!
     #The abbreviation for the team.
@@ -26,7 +30,7 @@ export default `
     #Choose the schools matchups for comparison
     Matchup: Matchup!
     #See how a team fares for all time rankings
-    AllTimeRankings: AllTimeRankings!
+    AllTimeRankings: AllTimeRankings
   }
 
   #All American information about the team
