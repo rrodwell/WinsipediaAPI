@@ -19,11 +19,11 @@ export default {
           }) 
         return {
           TeamId: teamInfo.dataValues.TeamId,
-          School: teamInfo.dataValues.School,
-          Name: teamInfo.dataValues.Name,
+          SchoolName: teamInfo.dataValues.School,
+          TeamName: teamInfo.dataValues.Name,
           Conference: teamInfo.dataValues.Conference,
           Coach: teamInfo.dataValues.Coach,
-          Location: teamInfo.dataValues.Location,
+          City: teamInfo.dataValues.Location,
           State: teamInfo.dataValues.State,
           Abbreviation: teamInfo.dataValues.Abbreviation,
           MatchupSlug: args.Matchup,
@@ -34,10 +34,10 @@ export default {
         return {
           TeamId: "",
           School: "",
-          Name: "",
+          TeamName: "",
           Conference: "",
           Coach: "",
-          Location: "",
+          City: "",
           State: "",
           Abbreviation: "",
         }
@@ -181,14 +181,14 @@ export default {
         })
         return {
           Trophies: heismanInfo.dataValues.Trophies,
-          Special: heismanInfo.dataValues.Special,
+          Notes: heismanInfo.dataValues.Special,
           School: heismanInfo.dataValues.School
         }
       }
       catch (e) {
         return {
           Trophies: 0,
-          Special: "",
+          Notes: "",
         }    
       }
     },
@@ -201,17 +201,18 @@ export default {
           }
         })
         return {
-          ADTwitter: socialMediaInfo.dataValues.ADTwitter,
-          FBTwitter: socialMediaInfo.dataValues.FBTwitter,
+          AtheleticDepartmentTwitter: socialMediaInfo.dataValues.ADTwitter,
+          FootballTwitter: socialMediaInfo.dataValues.FBTwitter,
           SBNTwitter: socialMediaInfo.dataValues.SBNTwitter,
-          URL: socialMediaInfo.dataValues.URL,
+          HomePageURL: socialMediaInfo.dataValues.URL,
         }
       }
       catch (e) {
         return {
-          ADTwitter: "",
-          FBTwitter: "",
-          URL: "",
+          AtheleticDepartmentTwitter: "",
+          FootballTwitter: "",
+          SBNTwitter: "",
+          HomePageURL: "",
         }
       }
     },
@@ -228,15 +229,15 @@ export default {
           },
         })
         return {
-          Color: brandingInfo.dataValues.Color,
-          SecondaryColor: brandingInfo.dataValues.SecondaryColor,
+          HexColor: brandingInfo.dataValues.Color,
+          HexSecondaryColor: brandingInfo.dataValues.SecondaryColor,
           LikeColor: brandingInfo.dataValues.LikeColor,
         }
       }
       catch (e) {
         return {
-          Color: "",
-          SecondaryColor: "",
+          HexColor: "",
+          HexSecondaryColor: "",
           LikeColor: "",
         }
       }
@@ -308,11 +309,11 @@ export default {
           }) 
         return {
           TeamId: teamInfo.dataValues.TeamId,
-          School: teamInfo.dataValues.School,
-          Name: teamInfo.dataValues.Name,
+          SchoolName: teamInfo.dataValues.School,
+          TeamName: teamInfo.dataValues.Name,
           Conference: teamInfo.dataValues.Conference,
           Coach: teamInfo.dataValues.Coach,
-          Location: teamInfo.dataValues.Location,
+          City: teamInfo.dataValues.Location,
           State: teamInfo.dataValues.State,
           Abbreviation: teamInfo.dataValues.Abbreviation,
           SchoolSlug: parent.MatchupSlug,
@@ -322,11 +323,11 @@ export default {
       catch (e) {
         return {
           TeamId: "",
-          School: "",
-          Name: "",
+          SchoolName: "",
+          TeamName: "",
           Conference: "",
           Coach: "",
-          Location: "",
+          City: "",
           State: "",
           Abbreviation: "",
         }
