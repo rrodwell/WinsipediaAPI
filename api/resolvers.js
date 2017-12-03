@@ -64,7 +64,8 @@ export default {
           attributes: [
             'Wins', 
             'Losses', 
-            'Ties'
+            'Ties',
+            'Pct'
           ],
           where: {
             TeamID: matchupTeam.dataValues.TeamId,
@@ -75,6 +76,7 @@ export default {
           Wins: dbInfo.Wins,
           Losses: dbInfo.Losses,
           Ties: dbInfo.Ties,
+          WinPercent: dbInfo.Pct,
           MatchupTeamID: matchupTeam.dataValues.TeamId,
           MatchupSlug: parent.MatchupSlug,
           SchoolSlug: parent.SchoolSlug
