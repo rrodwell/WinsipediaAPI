@@ -3,6 +3,8 @@ import bodyParser from 'body-parser';
 import { graphqlExpress, graphiqlExpress } from 'graphql-server-express';
 import { makeExecutableSchema } from 'graphql-tools';
 import db from './models';
+import cors from 'express-cors';
+
 
 
 import typeDefs from './api/schema.gql';
@@ -14,6 +16,9 @@ const schema = makeExecutableSchema({
 });
 
 const app = express();
+
+app.options('http://localhost:3000/', cors());
+
 
 app.use('/graphql', bodyParser.json(), graphqlExpress({ schema, context: { db } }));
 
