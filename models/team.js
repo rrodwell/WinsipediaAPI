@@ -25,8 +25,6 @@ export default (sequelize, DataTypes) => {
     TicketCityBannerLinkId_728_90: DataTypes.STRING,
     TicketCityBannerLinkId_300_250: DataTypes.STRING,
     FanaticsLinkText_728_90: DataTypes.STRING,
-    createdAt: DataTypes.STRING,
-    updatedAt: DataTypes.STRING,
   });
   return Team;
 };

@@ -7,8 +7,6 @@ export default (sequelize, DataTypes) => {
     School: DataTypes.STRING,
     Trophies: DataTypes.INTEGER,
     Special: DataTypes.STRING,
-    createdAt: DataTypes.STRING,
-    updatedAt: DataTypes.STRING,
   });
 
   return Heisman;

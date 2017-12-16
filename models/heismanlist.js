@@ -10,8 +10,6 @@ export default (sequelize, DataTypes) => {
     Position: DataTypes.STRING,
     Points: DataTypes.INTEGER,
     PercentPointsPossible: DataTypes.FLOAT,
-    createdAt: DataTypes.STRING,
-    updatedAt: DataTypes.STRING,
   });
   return HeismanList;
 };
