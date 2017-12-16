@@ -8,9 +8,7 @@ export default (sequelize, DataTypes) => {
     Number: DataTypes.INTEGER,
     Players: DataTypes.STRING,
     Special: DataTypes.STRING,
-    Key: DataTypes.STRING,
-    createdAt: DataTypes.STRING,
-    updatedAt: DataTypes.STRING,
+    Key: DataTypes.STRING
   });
   return AllAmerican;
 };
