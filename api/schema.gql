@@ -97,6 +97,12 @@ export default `
     Ties: Int!
     #Win percent vs matchup
     WinPercent: String!
+    #Number of years in most recent win streak by Team
+    WinStreakLength: Int!
+    #The starting year in most recent win streak by Team
+    WinStreakStartYear: Int!
+    #The ending year in most recent win streak by Team
+    WinStreakEndYear: Int!
     #Team data for matchup team
     MatchupTeam: Team!
 

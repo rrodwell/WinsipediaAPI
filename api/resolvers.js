@@ -46,10 +46,7 @@ export default {
   },
 
   Team: {
-    Matchup: async (parent, args, source) => {
-      console.log('-------------------------')
-      console.log(parent)
-      console.log('-------------------------')      
+    Matchup: async (parent, args, source) => {   
       try {
         let matchupTeam = await source.db.Team.findOne({
           attributes: [
@@ -65,7 +62,9 @@ export default {
             'Wins', 
             'Losses', 
             'Ties',
-            'Pct'
+            'Pct',
+            'CurrentStreak',
+            'CurrentStreakYears'
           ],
           where: {
             TeamID: matchupTeam.dataValues.TeamId,
@@ -76,6 +75,9 @@ export default {
           Wins: dbInfo.Wins,
           Losses: dbInfo.Losses,
           Ties: dbInfo.Ties,
+          WinStreakLength: dbInfo.CurrentStreak,
+          WinStreakStartYear: dbInfo.CurrentStreakYears.substring(0, 4),
+          WinStreakEndYear: dbInfo.CurrentStreakYears.substring(dbInfo.CurrentStreakYears.length-4, dbInfo.CurrentStreakYears.length),
           WinPercent: ((Math.round(dbInfo.Pct*1000)/1000).toString()+"0000").substring(0, 1)+"."+((Math.round(dbInfo.Pct*1000)/1000).toString()+"0000").substring(2, 5),
           MatchupTeamID: matchupTeam.dataValues.TeamId,
           MatchupSlug: parent.MatchupSlug,
