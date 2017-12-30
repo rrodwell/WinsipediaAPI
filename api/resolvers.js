@@ -90,6 +90,13 @@ export default {
           Wins: 0,
           Losses: 0,
           Ties: 0,
+          WinStreakLength: 0,
+          WinStreakStartYear: 0,
+          WinStreakEndYear: 0,
+          WinPercent: 0,
+          MatchupTeamID: 0,
+          MatchupSlug: parent.MatchupSlug,
+          SchoolSlug: parent.SchoolSlug
         }
       }
     },
