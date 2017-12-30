@@ -100,9 +100,9 @@ export default `
     #Number of years in most recent win streak by Team
     WinStreakLength: Int!
     #The starting year in most recent win streak by Team
-    WinStreakStartYear: Int!
+    WinStreakStartYear: String!
     #The ending year in most recent win streak by Team
-    WinStreakEndYear: Int!
+    WinStreakEndYear: String!
     #Team data for matchup team
     MatchupTeam: Team!
 
