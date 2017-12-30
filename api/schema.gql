@@ -96,7 +96,7 @@ export default `
     #Total Ties in Matchup by Team
     Ties: Int!
     #Win percent vs matchup
-    WinPercent: Float!
+    WinPercent: String!
     #Team data for matchup team
     MatchupTeam: Team!
 

@@ -76,7 +76,7 @@ export default {
           Wins: dbInfo.Wins,
           Losses: dbInfo.Losses,
           Ties: dbInfo.Ties,
-          WinPercent: dbInfo.Pct,
+          WinPercent: ((Math.round(dbInfo.Pct*1000)/1000).toString()+"0000").substring(0, 1)+"."+((Math.round(dbInfo.Pct*1000)/1000).toString()+"0000").substring(2, 5),
           MatchupTeamID: matchupTeam.dataValues.TeamId,
           MatchupSlug: parent.MatchupSlug,
           SchoolSlug: parent.SchoolSlug
