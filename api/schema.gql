@@ -129,7 +129,8 @@ export default `
     ConferenceChampData: Int!
     #Teams all time bowl record rank compared to other teams
     BowlGameRank: Int!
-    BowlGameData: Int!
+    #Number of bowl games played in
+    BowlGameData: Int
     WinRank: Int!
     WinData: Int!
     BowlRecordRank: Int!

@@ -105,6 +105,7 @@ export default {
         let allTimeRankingsInfo = await source.db.Rank.findOne({
           attributes: [
             'AllTimeRecordRank', 
+            'BowlGameData',
             'AllTimeRecordPercent', 
             'AllTimeRecordWins', 
             'AllTimeRecordLosses', 
@@ -113,10 +114,9 @@ export default {
             'NationalChampData', 
             'ConferenceChampRank', 
             'ConferenceChampData', 
-            'BowlGameRank', 
-            'BowlGameData',
-            'WinRank', 
-            'WinData', 
+            'BowlGameRank',
+            'WinRank',
+            'WinData',
             'BowlRecordRank', 
             'BowlRecordPercent', 
             'BowlRecordWins', 
@@ -143,7 +143,46 @@ export default {
             teamId: parent.TeamId
           }
         })
-        return allTimeRankingsInfo
+        console.log("here")
+        console.log(allTimeRankingsInfo)
+        console.log(allTimeRankingsInfo.dataValues.BowlGameData)
+        console.log(allTimeRankingsInfo.dataValues.BowlGameRank)
+        return {
+          AllTimeRecordRank: allTimeRankingsInfo.dataValues.AllTimeRecordRank,
+          AllTimeRecordPercent: allTimeRankingsInfo.dataValues.AllTimeRecordPercent,
+          AllTimeRecordWins: allTimeRankingsInfo.dataValues.AllTimeRecordWins,
+          AllTimeRecordLosses: allTimeRankingsInfo.dataValues.AllTimeRecordLosses,
+          AllTimeRecordTies: allTimeRankingsInfo.dataValues.AllTimeRecordTies,
+          NationalChampRank: allTimeRankingsInfo.dataValues.NationalChampRank,
+          NationalChampData: allTimeRankingsInfo.dataValues.NationalChampData,
+          ConferenceChampRank: allTimeRankingsInfo.dataValues.ConferenceChampRank,
+          ConferenceChampData: allTimeRankingsInfo.dataValues.ConferenceChampData,
+          BowlGameRank: allTimeRankingsInfo.dataValues.BowlGameRank,
+          BowlGameData: allTimeRankingsInfo.dataValues.BowlGameData,
+          WinRank: allTimeRankingsInfo.dataValues.WinRank,
+          WinData: allTimeRankingsInfo.dataValues.WinData,
+          BowlRecordRank: allTimeRankingsInfo.dataValues.BowlRecordRank,
+          BowlRecordPercent: allTimeRankingsInfo.dataValues.BowlRecordPercent,
+          BowlRecordWins: allTimeRankingsInfo.dataValues.BowlRecordWins,
+          BowlRecordLosses: allTimeRankingsInfo.dataValues.BowlRecordLosses,
+          BowlRecordTies: allTimeRankingsInfo.dataValues.BowlRecordTies,
+          AllAmericanRank: allTimeRankingsInfo.dataValues.AllAmericanRank,
+          AllAmericanData: allTimeRankingsInfo.dataValues.AllAmericanData,
+          HeismanRank: allTimeRankingsInfo.dataValues.HeismanRank,
+          HeismanData: allTimeRankingsInfo.dataValues.HeismanData,
+          NFLDraftRank: allTimeRankingsInfo.dataValues.NFLDraftRank,
+          NFLDraftData: allTimeRankingsInfo.dataValues.NFLDraftData,
+          NFLFirstRoundRank: allTimeRankingsInfo.dataValues.NFLFirstRoundRank,
+          NFLFirstRound: allTimeRankingsInfo.dataValues.NFLFirstRound,
+          APOneRank: allTimeRankingsInfo.dataValues.APOneRank,
+          APOne: allTimeRankingsInfo.dataValues.APOne,
+          WeeksInPollRank: allTimeRankingsInfo.dataValues.WeeksInPollRank,
+          WeeksInPollData: allTimeRankingsInfo.dataValues.WeeksInPollData,
+          Overall: allTimeRankingsInfo.dataValues.Overall,
+          OverallRank: allTimeRankingsInfo.dataValues.OverallRank,
+          BowlStreakRank: allTimeRankingsInfo.dataValues.BowlStreakRank,
+          BowlStreakData: allTimeRankingsInfo.dataValues.BowlStreakData,
+        }
       }
       catch (e) {
         return {
