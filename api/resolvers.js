@@ -143,13 +143,12 @@ export default {
             teamId: parent.TeamId
           }
         })
-        console.log("here")
-        console.log(allTimeRankingsInfo)
-        console.log(allTimeRankingsInfo.dataValues.BowlGameData)
-        console.log(allTimeRankingsInfo.dataValues.BowlGameRank)
+        console.log("here 1")
+        console.log(allTimeRankingsInfo.dataValues.AllTimeRecordPercent.toString().substring(0,5))
+        console.log("here 2")
         return {
           AllTimeRecordRank: allTimeRankingsInfo.dataValues.AllTimeRecordRank,
-          AllTimeRecordPercent: allTimeRankingsInfo.dataValues.AllTimeRecordPercent,
+          AllTimeRecordPercent: allTimeRankingsInfo.dataValues.AllTimeRecordPercent.toString().substring(0,5),
           AllTimeRecordWins: allTimeRankingsInfo.dataValues.AllTimeRecordWins,
           AllTimeRecordLosses: allTimeRankingsInfo.dataValues.AllTimeRecordLosses,
           AllTimeRecordTies: allTimeRankingsInfo.dataValues.AllTimeRecordTies,
