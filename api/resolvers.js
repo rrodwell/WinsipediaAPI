@@ -143,9 +143,6 @@ export default {
             teamId: parent.TeamId
           }
         })
-        console.log("here 1")
-        console.log(allTimeRankingsInfo.dataValues.AllTimeRecordPercent.toString().substring(0,5))
-        console.log("here 2")
         return {
           AllTimeRecordRank: allTimeRankingsInfo.dataValues.AllTimeRecordRank,
           AllTimeRecordPercent: allTimeRankingsInfo.dataValues.AllTimeRecordPercent.toString().substring(0,5),
