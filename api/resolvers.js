@@ -157,7 +157,7 @@ export default {
         })
         return {
           AllTimeRecordRank: allTimeRankingsInfo.dataValues.AllTimeRecordRank,
-          AllTimeRecordPercent: allTimeRankingsInfo.dataValues.AllTimeRecordPercent.toString().substring(0,5),
+          AllTimeRecordPercent: ((Math.round(allTimeRankingsInfo.dataValues.AllTimeRecordPercent*1000)/1000).toString()+"0000").substring(0, 1)+"."+((Math.round(allTimeRankingsInfo.dataValues.AllTimeRecordPercent*1000)/1000).toString()+"0000").substring(2, 5),
           AllTimeRecordWins: allTimeRankingsInfo.dataValues.AllTimeRecordWins,
           AllTimeRecordLosses: allTimeRankingsInfo.dataValues.AllTimeRecordLosses,
           AllTimeRecordTies: allTimeRankingsInfo.dataValues.AllTimeRecordTies,

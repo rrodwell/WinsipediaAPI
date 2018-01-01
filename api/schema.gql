@@ -112,7 +112,7 @@ export default `
     #Teams all time record rank compared to other teams
     AllTimeRecordRank: Int!
     #Teams all time record winning percent
-    AllTimeRecordPercent: Float!
+    AllTimeRecordPercent: String!
     #Teams all time record number of wins
     AllTimeRecordWins: Int!
     #Teams all time record number of losses
