@@ -85,8 +85,20 @@ export default {
         }
       }
       catch (e) {
+        
+          let matchupTeam = await source.db.Team.findOne({
+            attributes: [
+              'TeamId', 
+              'School'
+            ],
+            where: {
+              Slug: parent.MatchupSlug,
+            },
+          }) 
+        console.log("-----------------")
+        console.log(matchupTeam)
         return {
-          MatchupSchool: "",
+          MatchupSchool: matchupTeam.dataValues.School,
           Wins: 0,
           Losses: 0,
           Ties: 0,
@@ -94,7 +106,7 @@ export default {
           WinStreakStartYear: 0,
           WinStreakEndYear: 0,
           WinPercent: 0,
-          MatchupTeamID: 0,
+          MatchupTeamID: matchupTeam.dataValues.TeamId,
           MatchupSlug: parent.MatchupSlug,
           SchoolSlug: parent.SchoolSlug
         }
