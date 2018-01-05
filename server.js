@@ -20,7 +20,7 @@ const app = express();
 app.use(cors())
 
 
-app.options('http://winsipedia-api.herokuapp.com/graphql', cors());
+app.options('http://localhost:3000/graphql', cors());
 
 
 app.use('/graphql', bodyParser.json(), graphqlExpress({ schema, context: { db } }));
