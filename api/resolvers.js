@@ -17,7 +17,9 @@ export default {
             where: {
               Slug: args.School,
             },
-          }) 
+          })
+        console.log("------------------")
+        console.log(args)
         return {
           TeamId: teamInfo.dataValues.TeamId,
           SchoolName: teamInfo.dataValues.School,
