@@ -19,7 +19,8 @@ export default {
             },
           })
         console.log("------------------")
-        console.log(args)
+        console.log(teamInfo)
+        console.log("------------------")
         return {
           TeamId: teamInfo.dataValues.TeamId,
           SchoolName: teamInfo.dataValues.School,
