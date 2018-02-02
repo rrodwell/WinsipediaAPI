@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/rrodwell/WinsipediaAPI#readme",
   "dependencies": {
+    "babel": "^6.23.0",
     "body-parser": "^1.17.2",
     "cors": "^2.8.4",
     "express": "^4.15.4",
