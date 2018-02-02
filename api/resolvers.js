@@ -34,6 +34,8 @@ export default {
         }
       }
       catch (e) {
+        console.log("OHHH NOOOOOO")
+        console.log(e)
         return {
           TeamId: "",
           School: "",
