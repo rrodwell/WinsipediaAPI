@@ -20,7 +20,7 @@ const app = express();
 app.use(cors())
 
 
-app.options('http://localhost:3000/graphql', cors());
+app.options('https://winsipedia-api.herokuapp.com/graphql', cors());
 
 
 app.use('/graphql', bodyParser.json(), graphqlExpress({ schema, context: { db } }));
@@ -32,7 +32,7 @@ app.use('/graphiql', graphiqlExpress({
 
 db.sequelize.sync({})
   .then(() => {
-    app.listen(3000, () => {
+    app.listen(process.env.PORT || 3000, () => {
       console.log('listening on 3000');
     });
   });
