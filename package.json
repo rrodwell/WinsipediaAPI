@@ -8,7 +8,7 @@
     "start": "babel-node server.js"
   },
   "engines": {
-    "node": ">= 7.6.0"
+    "node": "6.10.1"
   },
   "repository": {
     "type": "git",
