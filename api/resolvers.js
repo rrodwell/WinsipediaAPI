@@ -22,14 +22,14 @@ export default {
         console.log(teamInfo)
         console.log("------------------")
         return {
-          TeamId: teamInfo.dataValues.TeamId,
-          SchoolName: teamInfo.dataValues.School,
-          TeamName: teamInfo.dataValues.Name,
-          Conference: teamInfo.dataValues.Conference,
-          Coach: teamInfo.dataValues.Coach,
-          City: teamInfo.dataValues.Location,
-          State: teamInfo.dataValues.State,
-          Abbreviation: teamInfo.dataValues.Abbreviation,
+          // TeamId: teamInfo.dataValues.TeamId,
+          // SchoolName: teamInfo.dataValues.School,
+          // TeamName: teamInfo.dataValues.Name,
+          // Conference: teamInfo.dataValues.Conference,
+          // Coach: teamInfo.dataValues.Coach,
+          // City: teamInfo.dataValues.Location,
+          // State: teamInfo.dataValues.State,
+          // Abbreviation: teamInfo.dataValues.Abbreviation,
           MatchupSlug: args.Matchup,
           SchoolSlug: args.School,
         }
