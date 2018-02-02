@@ -1,6 +1,7 @@
 export default {
   Query: {
     team: async (parent, args, source) => {
+      console.log(args)
       try {
         let teamInfo = await source.db.Team.findOne({
           attributes: [
