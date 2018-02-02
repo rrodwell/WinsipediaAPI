@@ -43,6 +43,8 @@ export default {
           City: "",
           State: "",
           Abbreviation: "",
+          MatchupSlug: "Got an error I think - matchup",
+          SchoolSlug: "Got an error I think - school",
         }
       }
     },
