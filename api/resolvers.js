@@ -1,7 +1,6 @@
 export default {
   Query: {
     team: async (parent, args, source) => {
-      console.log(args)
       try {
         let teamInfo = await source.db.Team.findOne({
           attributes: [
@@ -35,8 +34,6 @@ export default {
         }
       }
       catch (e) {
-        console.log("OHHH NOOOOOO")
-        console.log(e)
         return {
           TeamId: "",
           School: "",
@@ -46,8 +43,8 @@ export default {
           City: "",
           State: "",
           Abbreviation: "",
-          MatchupSlug: "Got an error I think - matchup",
-          SchoolSlug: "Got an error I think - school",
+          MatchupSlug: "",
+          SchoolSlug: "",
         }
       }
     },
@@ -102,9 +99,13 @@ export default {
             where: {
               Slug: parent.MatchupSlug,
             },
+<<<<<<< HEAD
           })
         console.log("-----------------")
         console.log(matchupTeam)
+=======
+          })
+>>>>>>> 0c05d45c1d391113111945a4739799be5358c94e
         return {
           MatchupSchool: matchupTeam.dataValues.School,
           Wins: 0,
