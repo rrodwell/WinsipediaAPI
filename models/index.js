@@ -10,11 +10,12 @@ config.define = {
 }
 
 if (config.use_env_variable) {
-  var sequelize = new Sequelize(process.env[config.use_env_variable]);
+  var sequelize = new Sequelize(process.env[config.use_env_variable],config);
 } else {
   var sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
 
+console.log(config);
 //sequalize the models
 var allamericanModel = sequelize.import('./allamerican')
 db[allamericanModel.name] = allamericanModel;
