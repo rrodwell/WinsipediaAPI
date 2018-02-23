@@ -16,7 +16,7 @@ export default {
             where: {
               Slug: args.School,
             },
-          })
+          }).then((r) => {console.log(r); return r;})
         console.log("--------------------LOG ABOVE IS THE NEW STUFF ------------------")
         console.log(teamInfo)
         console.log("------------------")
@@ -99,13 +99,9 @@ export default {
             where: {
               Slug: parent.MatchupSlug,
             },
-<<<<<<< HEAD
           })
         console.log("-----------------")
         console.log(matchupTeam)
-=======
-          })
->>>>>>> 0c05d45c1d391113111945a4739799be5358c94e
         return {
           MatchupSchool: matchupTeam.dataValues.School,
           Wins: 0,
