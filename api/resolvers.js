@@ -5,20 +5,20 @@ export default {
       try {
         let teamInfo = await source.db.Team.findOne({
           attributes: [
-            'TeamId', 
-            'School', 
-            'Name', 
-            'Conference', 
-            'Coach', 
-            'Location', 
-            'State', 
+            'TeamId',
+            'School',
+            'Name',
+            'Conference',
+            'Coach',
+            'Location',
+            'State',
             'Abbreviation'
           ],
             where: {
               Slug: args.School,
             },
-          })
-        console.log("------------------")
+          }).then((r) => {console.log(r); return r;})
+        console.log("--------------------LOG ABOVE IS THE NEW STUFF ------------------")
         console.log(teamInfo)
         console.log("------------------")
         return {
@@ -54,21 +54,21 @@ export default {
   },
 
   Team: {
-    Matchup: async (parent, args, source) => {   
+    Matchup: async (parent, args, source) => {
       try {
         let matchupTeam = await source.db.Team.findOne({
           attributes: [
-            'TeamId', 
+            'TeamId',
             'School'
           ],
           where: {
             Slug: parent.MatchupSlug,
           },
-        })  
+        })
         let dbInfo =  await source.db["Record".concat(parent.TeamId)].findOne({
           attributes: [
-            'Wins', 
-            'Losses', 
+            'Wins',
+            'Losses',
             'Ties',
             'Pct',
             'CurrentStreak',
@@ -93,16 +93,16 @@ export default {
         }
       }
       catch (e) {
-        
+
           let matchupTeam = await source.db.Team.findOne({
             attributes: [
-              'TeamId', 
+              'TeamId',
               'School'
             ],
             where: {
               Slug: parent.MatchupSlug,
             },
-          }) 
+          })
         console.log("-----------------")
         console.log(matchupTeam)
         return {
@@ -124,41 +124,41 @@ export default {
       try {
         let allTimeRankingsInfo = await source.db.Rank.findOne({
           attributes: [
-            'AllTimeRecordRank', 
+            'AllTimeRecordRank',
             'BowlGameData',
-            'AllTimeRecordPercent', 
-            'AllTimeRecordWins', 
-            'AllTimeRecordLosses', 
-            'AllTimeRecordTies', 
-            'NationalChampRank', 
-            'NationalChampData', 
-            'ConferenceChampRank', 
-            'ConferenceChampData', 
+            'AllTimeRecordPercent',
+            'AllTimeRecordWins',
+            'AllTimeRecordLosses',
+            'AllTimeRecordTies',
+            'NationalChampRank',
+            'NationalChampData',
+            'ConferenceChampRank',
+            'ConferenceChampData',
             'BowlGameRank',
             'WinRank',
             'WinData',
-            'BowlRecordRank', 
-            'BowlRecordPercent', 
-            'BowlRecordWins', 
-            'BowlRecordLosses', 
-            'BowlRecordTies', 
-            'AllAmericanRank', 
-            'AllAmericanData', 
-            'HeismanRank', 
-            'HeismanData', 
-            'NFLDraftRank', 
-            'NFLDraftData', 
-            'NFLFirstRoundRank', 
-            'NFLFirstRound', 
-            'APOneRank', 
-            'APOne', 
-            'WeeksInPollRank', 
-            'WeeksInPollData', 
-            'Overall', 
-            'OverallRank', 
-            'BowlStreakRank', 
+            'BowlRecordRank',
+            'BowlRecordPercent',
+            'BowlRecordWins',
+            'BowlRecordLosses',
+            'BowlRecordTies',
+            'AllAmericanRank',
+            'AllAmericanData',
+            'HeismanRank',
+            'HeismanData',
+            'NFLDraftRank',
+            'NFLDraftData',
+            'NFLFirstRoundRank',
+            'NFLFirstRound',
+            'APOneRank',
+            'APOne',
+            'WeeksInPollRank',
+            'WeeksInPollData',
+            'Overall',
+            'OverallRank',
+            'BowlStreakRank',
             'BowlStreakData'
-          ],          
+          ],
           where: {
             teamId: parent.TeamId
           }
@@ -242,7 +242,7 @@ export default {
     Heisman: async (parent, args, source) => {
       try {
         let heismanInfo = await source.db.Heisman.findOne({
-          attributes: ['School','Trophies','Special'],  
+          attributes: ['School','Trophies','Special'],
           where: {
             TeamId: parent.TeamId,
           }
@@ -257,7 +257,7 @@ export default {
         return {
           Trophies: 0,
           Notes: "",
-        }    
+        }
       }
     },
     SocialMedia: async (parent, args, source) => {
@@ -288,8 +288,8 @@ export default {
       try {
         let brandingInfo = await source.db.Team.findOne({
           attributes: [
-            'Color', 
-            'SecondaryColor', 
+            'Color',
+            'SecondaryColor',
             'LikeColor'
           ],
           where: {
@@ -314,7 +314,7 @@ export default {
       try {
         let allAmericanInfo = await source.db.AllAmerican.findOne({
           attributes: [
-            'Number', 
+            'Number',
             'Players'
           ],
           where: {
@@ -339,12 +339,12 @@ export default {
       try {
         let heismanWinnersInfo = await source.db.HeismanList.findAll({
           attributes: [
-            'Year', 
-            'Winner', 
-            'Position', 
-            'Points', 
+            'Year',
+            'Winner',
+            'Position',
+            'Points',
             'PercentPointsPossible'
-          ],          
+          ],
           where: {
             School: parent.School,
           },
@@ -362,19 +362,19 @@ export default {
       try {
         let teamInfo = await source.db.Team.findOne({
           attributes: [
-            'TeamId', 
-            'School', 
-            'Name', 
-            'Conference', 
-            'Coach', 
-            'Location', 
-            'State', 
+            'TeamId',
+            'School',
+            'Name',
+            'Conference',
+            'Coach',
+            'Location',
+            'State',
             'Abbreviation'
           ],
             where: {
               TeamID: parent.MatchupTeamID,
             },
-          }) 
+          })
         return {
           TeamId: teamInfo.dataValues.TeamId,
           SchoolName: teamInfo.dataValues.School,
