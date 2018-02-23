@@ -16,7 +16,7 @@ export default {
             where: {
               Slug: args.School,
             },
-          }).then((r) => {console.log(r); return r;})
+          })
         console.log("--------------------LOG ABOVE IS THE NEW STUFF ------------------")
         console.log(teamInfo)
         console.log("------------------")
